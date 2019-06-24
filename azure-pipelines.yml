@@ -9,6 +9,7 @@ steps:
     inputs:
       command: 'pack'
       packagesToPack: '**/*.csproj'
+      configuration: 'Release'
   - task: CopyFiles@2
     inputs:
       Contents: '**/*.nupkg'
