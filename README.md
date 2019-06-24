@@ -1,5 +1,7 @@
 # catj
 
+[![Build Status](https://dev.azure.com/mattleibow/OpenSource/_apis/build/status/catj?branchName=master)](https://dev.azure.com/mattleibow/OpenSource/_build/latest?definitionId=17&branchName=master) ![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/catj.svg) 
+
 Displays JSON files in a flat format.
 
 Input:
