@@ -1,4 +1,0 @@
-.mappings.templates[0].fields.mapping.norms = false
-.mappings.templates[0].fields.mapping.type = "text"
-.mappings.templates[0].fields.mapping.fields.keyword.ignore_above = 256
-.mappings.templates[0].fields.mapping.fields.keyword.type = "keyword"

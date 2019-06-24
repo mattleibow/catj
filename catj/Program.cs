@@ -8,15 +8,30 @@ namespace catj
     {
         public static int Main(string[] args)
         {
-            if (args.Length < 1)
+            var input = string.Empty;
+
+            if (args.Length >= 1)
+            {
+                var file = args[0];
+                if (!File.Exists(file))
+                {
+                    Console.Error.WriteLine($"File '{file}' does not exist.");
+                    return 1;
+                }
+
+                input = File.ReadAllText(file);
+            }
+            else if (Console.IsInputRedirected)
+            {
+                input = Console.In.ReadToEnd();
+            }
+            else
+            {
+                Console.Error.WriteLine($"No input.");
                 return 1;
+            }
 
-            var file = args[0];
-
-            if (!File.Exists(file))
-                return 1;
-
-            var jtoken = JToken.Parse(File.ReadAllText(file));
+            var jtoken = JToken.Parse(input);
 
             Print(jtoken);
 
