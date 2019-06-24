@@ -4,9 +4,29 @@
 
 Displays JSON files in a flat format.
 
+## Install
+
+```sh
+dotnet tool install -g catj
+```
+
+## Usage
+
+```sh
+catj [file]
+```
+
+OR
+
+```sh
+cat [file] | catj
+```
+
+## Example
+
 Input:
 
-```
+```json
 {
   "mappings": {
     "templates": [
@@ -31,9 +51,11 @@ Input:
 
 Output:
 
-```
+```txt
 .mappings.templates[0].fields.mapping.norms = False
 .mappings.templates[0].fields.mapping.type = "text"
 .mappings.templates[0].fields.mapping.fields.keyword.ignore_above = 256
 .mappings.templates[0].fields.mapping.fields.keyword.type = "keyword"
 ```
+
+![Demo](demo.gif)
