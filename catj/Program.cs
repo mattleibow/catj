@@ -19,7 +19,15 @@ namespace catj
                     return 1;
                 }
 
-                input = File.ReadAllText(file);
+                try
+                {
+                    input = File.ReadAllText(file);
+                }
+                catch (Exception ex)
+                {
+                    Console.Error.WriteLine($"An error occurred opening the file: {ex.Message}");
+                    return 1;
+                }
             }
             else if (Console.IsInputRedirected)
             {
@@ -31,11 +39,17 @@ namespace catj
                 return 1;
             }
 
-            var jtoken = JToken.Parse(input);
-
-            Print(jtoken);
-
-            return 0;
+            try
+            {
+                var jtoken = JToken.Parse(input);
+                Print(jtoken);
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine($"An error occurred printing the output: {ex.Message}");
+                return 1;
+            }
         }
 
         private static void Print(JToken jtoken, string path = "")

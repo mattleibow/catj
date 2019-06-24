@@ -11,7 +11,7 @@
     <PackageId>catj</PackageId>
     <Title>catj</Title>
     <AssemblyVersion>1.0.0</AssemblyVersion>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.0.1</PackageVersion>
     <Authors>mattleibow</Authors>
     <Description>Displays JSON files in a flat format.</Description>
     <Copyright>Copyright (c) Matthew Leibowitz 2019</Copyright>
